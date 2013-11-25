@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131124181642) do
+ActiveRecord::Schema.define(version: 20131125202337) do
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ride_drivers", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "ride_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ride_drivers", ["user_id", "ride_id"], name: "index_ride_drivers_on_user_id_and_ride_id", unique: true
+
+  create_table "ride_passengers", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "ride_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ride_passengers", ["user_id", "ride_id"], name: "index_ride_passengers_on_user_id_and_ride_id", unique: true
+
+  create_table "rides", force: true do |t|
+    t.date     "day"
+    t.time     "time"
+    t.integer  "seats"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

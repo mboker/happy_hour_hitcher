@@ -1,4 +1,12 @@
 <h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+
+
+<% @rides.each do |ride| %>
+  Ride: <%=link_to ride.id, ride %></br> 
+
+<%= button_to 'Join Ride', ride_passengers_path(:ride_id => ride, :user_id => current_user) %>
+<%= button_to 'Drive Ride', ride_drivers_path(:ride_id => ride, :user_id => current_user) %> </td> 
+</br>
 <% end %>
+
+<%= link_to 'New Ride', new_ride_path %>

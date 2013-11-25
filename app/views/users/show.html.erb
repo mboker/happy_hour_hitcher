@@ -1,3 +1,14 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
+<h3>Details for <%= @user.name %></h3>
+
 <p>Email: <%= @user.email if @user.email %></p>
+</br>
+
+<h4>Rides <%= @user.name %> is a Passenger On</h4>
+<% @user_sitting_rides.each do |user_sitting_ride| %>
+  Ride: <%=link_to user_sitting_ride.id, user_sitting_ride %></br> 
+<% end %>
+
+<h4>Rides <%= @user.name %> is a Driver On</h4>
+<% @user_driving_rides.each do |user_driving_ride| %>
+  Ride: <%=link_to user_driving_ride.id, user_driving_ride %></br> 
+<% end %>
