@@ -11,6 +11,9 @@ class RidesController < ApplicationController
   # GET /rides/1
   # GET /rides/1.json
   def show
+    @events = Event.where('id = ?', @ride.event_id)
+    @passengers = User.joins(:ride_passengers).where(ride_passengers: {ride_id: @ride})
+    @drivers = User.joins(:ride_drivers).where(ride_drivers: {ride_id: @ride})
   end
 
   # GET /rides/new

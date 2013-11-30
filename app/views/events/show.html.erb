@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h2>
+<h3><strong>
   <%= @event.name %>
-</h2>
+</strong></h3>
 
-<h4>
-  At 
-  <%= Location.where('id = ?',@event.location_id).name %>
-</h4>
 
-<h4>
-  On <%= @event.day %> From <%= @event.start.hour %> to <%= @event.end.hour %>
-</h4>
+<strong><%= @event.day %> From <%= @event.start.hour %> to <%= @event.end.hour %> o'clock</strong> 
 
+</br>
+  At
+<strong> 
+  <%= link_to @event.location.name, @event.location %>
+</strong>
 
 </br>
 </br>
-<h4>Rides With Seats</h4>
+</br>
+<strong>Rides With Open Seats</strong>
 <TABLE>
 <% @rides_with_open_seats.each do |ride| %>
  <TR><TD>Ride: <%=link_to ride.id, ride %></TD>
@@ -28,7 +28,7 @@
 
 </br>
 
-<h4>Rides That Need a Driver </h4>
+<strong>Rides That Need a Driver</strong> 
 <TABLE>
 <% @driverless_rides.each do |ride| %>
   <TR><TD>Ride: <%=link_to ride.id, ride %></TD>

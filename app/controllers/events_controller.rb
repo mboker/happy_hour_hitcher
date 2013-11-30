@@ -11,7 +11,9 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @rides_with_open_seats = Ride.where('event_id = ?', params[:id]).where("seats > ?", 0)
- 
+
+    @locations = Location.where('id = ?', @event.location_id)
+
     @driverless_rides = Ride.where('event_id = ?', params[:id]).joins('LEFT OUTER JOIN ride_drivers ON ride_drivers.ride_id = rides.id') - Ride.joins('INNER JOIN ride_drivers ON ride_drivers.ride_id = rides.id')
   end
 

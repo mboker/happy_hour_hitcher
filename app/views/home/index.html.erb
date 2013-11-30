@@ -1,10 +1,10 @@
-<h3>Happy Hour Hitcher</h3>
+<h3><strong>Happy Hour Hitcher</strong></h3>
 </br>
 
-<h4>Events By Day</h4>
+<h4><strong>Events By Day</strong></h4>
 *Click an Event to view available rides
 </br></br>
-<h5><u>Monday</u></h5>
+<strong>Monday</strong>
 <TABLE>
 <% @monday_events.each do |event| %>
   <TR><TD><%=link_to event.name, event %></TD>
@@ -13,16 +13,16 @@
 <% end %>
 </br>
 
-<h5><u>Tuesday</u></h5>
+<strong>Tuesday</strong>
 <TABLE>
 <% @tuesday_events.each do |event| %>
   <TR><TD><%=link_to event.name, event %></TD>
 <TD>
 </TD></TR></TABLE> 
 <% end %>
-</br>
+</br></br>
 
-<h5><u>Wednesday</u></h5>
+<strong>Wednesday</strong>
 <TABLE>
 <% @wednesday_events.each do |event| %>
   <TR><TD><%=link_to event.name, event %></TD>
@@ -31,7 +31,7 @@
 <% end %>
 </br>
 
-<h5><u>Thursday</u></h5>
+<strong>Thursday</strong>
 <TABLE>
 <% @thursday_events.each do |event| %>
   <TR><TD><%=link_to event.name, event %></TD>
@@ -40,7 +40,7 @@
 <% end %>
 </br>
 
-<h5><u>Friday</u></h5>
+<strong>Friday</strong>
 <TABLE>
 <% @friday_events.each do |event| %>
   <TR><TD><%=link_to event.name, event %></TD>
@@ -49,7 +49,7 @@
 <% end %>
 </br>
 
-<h5><u>Saturday</u></h5>
+<strong>Saturday</strong>
 <TABLE>
 <% @saturday_events.each do |event| %>
   <TR><TD><%=link_to event.name, event %></TD>
@@ -58,7 +58,7 @@
 <% end %>
 </br>
 
-<h5><u>Sunday</u></h5>
+<strong>Sunday</strong>
 <TABLE>
 <% @sunday_events.each do |event| %>
   <TR><TD><%=link_to event.name, event %></TD>

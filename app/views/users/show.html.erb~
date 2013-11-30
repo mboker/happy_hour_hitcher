@@ -1,9 +1,13 @@
-<h3>Details for <%= @user.name %></h3>
+<h3><strong> <%= @user.name %> </strong></h3>
 
-<p>Email: <%= @user.email if @user.email %></p>
+<p><strong>Email: </strong>
+<%= @user.email if @user.email %></p>
+
+<p><strong>Address: </strong>
+<%= @user.address if @user.address %></p>
 </br>
 
-<h4>Rides <%= @user.name %> is a Passenger On</h4>
+<strong>Rides <%= @user.name %> is a Passenger On</strong>
 <table>
 <% @user_sitting_rides.each do |user_sitting_ride| %>
 <tr><td>
@@ -12,10 +16,14 @@
   </tr> 
 <% end %>
 </table>
+</br>
 
-<h4>Rides <%= @user.name %> is a Driver On</h4>
+<strong>Rides <%= @user.name %> is a Driver On</strong>
 <table>
 <% @user_driving_rides.each do |user_driving_ride| %>
-  Ride: <%=link_to user_driving_ride.id, user_driving_ride %></br> 
+<tr><td>
+  Ride: <%=link_to user_driving_ride.id, user_driving_ride %></td>
+  <td><%= link_to 'Cancel Drive', user_driving_ride, method: :delete, data: { confrim: 'Are you sure?' } %></td>
+  </tr> 
 <% end %>
 </table>

@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h3>
+  <strong>
   <%= @location.name %>
-</p>
+  </strong>
+</h3>
 
-<p>
   <strong>Address:</strong>
   <%= @location.address %>
-</p>
+</br>
+</br>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<%= link_to 'Back', root_path %>
