@@ -4,11 +4,21 @@
 </br>
 
 <h4>Rides <%= @user.name %> is a Passenger On</h4>
+<table>
 <% @user_sitting_rides.each do |user_sitting_ride| %>
-  Ride: <%=link_to user_sitting_ride.id, user_sitting_ride %></br> 
+<tr><td>
+  Ride: <%=link_to user_sitting_ride.id, user_sitting_ride %></td>
+  <td><%= link_to 'Cancel Seat', user_sitting_ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr> 
 <% end %>
+</table>
 
 <h4>Rides <%= @user.name %> is a Driver On</h4>
+<table>
 <% @user_driving_rides.each do |user_driving_ride| %>
-  Ride: <%=link_to user_driving_ride.id, user_driving_ride %></br> 
+<tr><td>
+  Ride: <%=link_to user_driving_ride.id, user_driving_ride %></td>
+  <td><%= link_to 'Cancel Drive', user_driving_ride, method: :delete, data: { confrim: 'Are you sure?' } %></td>
+  </tr> 
 <% end %>
+</table>

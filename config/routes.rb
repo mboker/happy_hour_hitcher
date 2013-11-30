@@ -1,4 +1,6 @@
 RailsWithBs::Application.routes.draw do
+  resources :events
+
   resources :ride_drivers
 
   resources :ride_passengers
