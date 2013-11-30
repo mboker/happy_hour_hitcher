@@ -20,7 +20,7 @@
     <tr><td>
     Ride: <%=link_to user_sitting_ride.event.name, user_sitting_ride.event %>&nbsp;</td>
     <td>
-    <%= user_sitting_ride.event.location.name %> At <%= user_sitting_ride.time.hour %> o'clock
+    <%= user_sitting_ride.event.location.name %> At <%= user_sitting_ride.time.hour %> o'clock &nbsp;
     </td>
     <td><strong><%= link_to 'Cancel Seat', user_sitting_ride, method: :delete, data: { confirm: 'Are you sure?' } %></strong></td>
     </tr> 
@@ -42,7 +42,7 @@
 <tr><td>
   Ride: <%=link_to user_driving_ride.event.name, user_driving_ride.event %>&nbsp;</td>
   <td>
-     <%= user_driving_ride.event.location.name %> At <%= user_driving_ride.time.hour %> o'clock
+     <%= user_driving_ride.event.location.name %> At <%= user_driving_ride.time.hour %> o'clock &nbsp;
   </td>
   <td><strong><%= link_to 'Cancel Drive', user_driving_ride, method: :delete, data: { confrim: 'Are you sure?' } %></strong></td>
 </tr>
