@@ -9,21 +9,45 @@
 
 <strong>Rides <%= @user.name %> is a Passenger On</strong>
 <table>
-<% @user_sitting_rides.each do |user_sitting_ride| %>
-<tr><td>
-  Ride: <%=link_to user_sitting_ride.id, user_sitting_ride %></td>
-  <td><%= link_to 'Cancel Seat', user_sitting_ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr> 
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Place & Time </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_sitting_rides.each do |user_sitting_ride| %>
+    <tr><td>
+    Ride: <%=link_to user_sitting_ride.event.name, user_sitting_ride.event %>&nbsp;</td>
+    <td>
+    <%= user_sitting_ride.event.location.name %> At <%= user_sitting_ride.time.hour %> o'clock
+    </td>
+    <td><strong><%= link_to 'Cancel Seat', user_sitting_ride, method: :delete, data: { confirm: 'Are you sure?' } %></strong></td>
+    </tr> 
 <% end %>
+</tbody>
 </table>
 </br>
 
 <strong>Rides <%= @user.name %> is a Driver On</strong>
 <table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Place & Time </th>
+</tr>
+</thead>
+<tbody>
 <% @user_driving_rides.each do |user_driving_ride| %>
 <tr><td>
-  Ride: <%=link_to user_driving_ride.id, user_driving_ride %></td>
-  <td><%= link_to 'Cancel Drive', user_driving_ride, method: :delete, data: { confrim: 'Are you sure?' } %></td>
-  </tr> 
+  Ride: <%=link_to user_driving_ride.event.name, user_driving_ride.event %>&nbsp;</td>
+  <td>
+     <%= user_driving_ride.event.location.name %> At <%= user_driving_ride.time.hour %> o'clock
+  </td>
+  <td><strong><%= link_to 'Cancel Drive', user_driving_ride, method: :delete, data: { confrim: 'Are you sure?' } %></strong></td>
+</tr>
 <% end %>
+</tbody>
 </table>
+
+

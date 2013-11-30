@@ -1,5 +1,6 @@
 class RidesController < ApplicationController
   before_action :set_ride, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 	
 
   # GET /rides
@@ -21,6 +22,13 @@ class RidesController < ApplicationController
     @ride = Ride.new
     if params[:event_id]
       @ride.event_id = params[:event_id]
+    end
+    @ride.save
+    if params[:user_id]
+      @ride_driver = RideDriver.new
+      @ride_driver.ride_id = @ride.id
+      @ride_driver.user_id = params[:user_id]
+      @ride_driver.save
     end
   end
 
