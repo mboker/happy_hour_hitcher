@@ -11,4 +11,25 @@
 </br>
 </br>
 
+<strong>Events</strong>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Day & Time </th>
+</tr>
+</thead>
+<tbody>
+<% @location_events.each do |location_event| %>
+<tr><td>
+    <%=link_to location_event.name, location_event %>&nbsp;</td>
+  <td>
+    <%= location_event.day %> from <%= location_event.start.hour %> to <%= location_event.end.hour %> &nbsp;
+  </td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+
 <%= link_to 'Back', root_path %>
