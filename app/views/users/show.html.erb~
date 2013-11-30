@@ -3,7 +3,7 @@
 <p><strong>Email: </strong>
 <%= @user.email if @user.email %></p>
 
-</br></br>
+</br>
 <h4><strong>Rides <%= @user.name %> is a Passenger On</strong></h4>
 <table>
   <thead>
@@ -15,7 +15,7 @@
   <tbody>
     <% @user_sitting_rides.each do |user_sitting_ride| %>
     <tr><td>
-    Ride: <%=link_to user_sitting_ride.event.name, user_sitting_ride.event %>&nbsp;</td>
+    Ride: <%=link_to user_sitting_ride.id, user_sitting_ride %> to <%= user_sitting_ride.event.name %>&nbsp;</td>
     <td>
     <%= link_to user_sitting_ride.event.location.name, user_sitting_ride.event.location %> At <%= user_sitting_ride.time.hour %> o'clock &nbsp;
     </td>
@@ -37,7 +37,7 @@
 <tbody>
 <% @user_driving_rides.each do |user_driving_ride| %>
 <tr><td>
-  Ride: <%=link_to user_driving_ride.event.name, user_driving_ride.event %>&nbsp;</td>
+  Ride: <%=link_to user_driving_ride.id, user_driving_ride %> to <%= user_driving_ride.event.name %>&nbsp;</td>
   <td>
      <%= link_to user_driving_ride.event.location.name, user_driving_ride.event.location %> At <%= user_driving_ride.time.hour %> o'clock &nbsp;
   </td>
