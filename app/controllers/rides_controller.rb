@@ -19,6 +19,9 @@ class RidesController < ApplicationController
   # GET /rides/new
   def new
     @ride = Ride.new
+    if params[:event_id]
+      @ride.event_id = params[:event_id]
+    end
   end
 
   # GET /rides/1/edit

@@ -5,7 +5,7 @@
 </strong></h3>
 
 
-<strong><%= @event.day %> From <%= @event.start.hour %> to <%= @event.end.hour %></strong>
+<strong><%= @event.day %> From <%= @event.start.hour %> to <%= @event.end.hour %> o'clock</strong> 
 
 </br>
   At
@@ -39,5 +39,5 @@
 </TABLE>
 
 </br></br>
-<%= link_to 'New Ride', new_ride_path %>
+<%= link_to 'New Ride', new_ride_path(:event => @event) %>
 
