@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @event.name %>
+</h2>
+
+<h2>
+  At 
+  <%= Location.where('id = ?',@event.location_id).name %>
+</h2>
+
+<h2>
+  On <%= @event.day %> From <%= @event.start.hour %>
+</h2>
+
+
+<p>
+  <strong>End:</strong>
+  <%= @event.end.hour %>
+</p>
+
+
+</br>
+<h4>Rides With Seats</h4>
+<TABLE>
+<% @rides_with_open_seats.each do |ride| %>
+ <TR><TD>Ride: <%=link_to ride.id, ride %></TD>
+<TD>
+<%= button_to 'Join Ride', ride_passengers_path(:ride_id => ride, :user_id => current_user) %>
+</TD></TR> 
+<% end %>
+</TABLE>
+
+</br>
+
+<h4>Rides That Need a Driver </h4>
+<TABLE>
+<% @driverless_rides.each do |ride| %>
+  <TR><TD>Ride: <%=link_to ride.id, ride %></TD>
+<TD>
+<%= button_to 'Drive Ride', ride_drivers_path(:ride_id => ride, :user_id => current_user) %>
+</TD></TR> 
+<% end %>
+</TABLE>
+
+</br></br>
+<%= link_to 'New Ride', new_ride_path %>
+

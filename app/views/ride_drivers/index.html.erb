@@ -1,0 +1,29 @@
+<h1>Listing ride_drivers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Ride</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ride_drivers.each do |ride_driver| %>
+      <tr>
+        <td><%= ride_driver.user_id %></td>
+        <td><%= ride_driver.ride_id %></td>
+        <td><%= link_to 'Show', ride_driver %></td>
+        <td><%= link_to 'Edit', edit_ride_driver_path(ride_driver) %></td>
+        <td><%= link_to 'Destroy', ride_driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ride driver', new_ride_driver_path %>

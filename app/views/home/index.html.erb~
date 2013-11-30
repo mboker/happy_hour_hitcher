@@ -1,0 +1,99 @@
+<h3>Happy Hour Hitcher</h3>
+</br>
+
+<h4>Events By Day</h4>
+*Click an Event to view available rides
+</br></br>
+<h5><u>Monday</u></h5>
+<TABLE>
+<% @monday_events.each do |event| %>
+  <TR><TD><%=link_to event.name, event %></TD>
+<TD>
+</TD></TR></TABLE> 
+<% end %>
+</br>
+
+<h5><u>Tuesday</u></h5>
+<TABLE>
+<% @tuesday_events.each do |event| %>
+  <TR><TD><%=link_to event.name, event %></TD>
+<TD>
+</TD></TR></TABLE> 
+<% end %>
+</br>
+
+<h5><u>Wednesday</u></h5>
+<TABLE>
+<% @wednesday_events.each do |event| %>
+  <TR><TD><%=link_to event.name, event %></TD>
+<TD>
+</TD></TR></TABLE> 
+<% end %>
+</br>
+
+<h5><u>Thursday</u></h5>
+<TABLE>
+<% @thursday_events.each do |event| %>
+  <TR><TD><%=link_to event.name, event %></TD>
+<TD>
+</TD></TR></TABLE> 
+<% end %>
+</br>
+
+<h5><u>Friday</u></h5>
+<TABLE>
+<% @friday_events.each do |event| %>
+  <TR><TD><%=link_to event.name, event %></TD>
+<TD>
+</TD></TR></TABLE> 
+<% end %>
+</br>
+
+<h5><u>Saturday</u></h5>
+<TABLE>
+<% @saturday_events.each do |event| %>
+  <TR><TD><%=link_to event.name, event %></TD>
+<TD>
+</TD></TR></TABLE> 
+<% end %>
+</br>
+
+<h5><u>Sunday</u></h5>
+<TABLE>
+<% @sunday_events.each do |event| %>
+  <TR><TD><%=link_to event.name, event %></TD>
+<TD>
+</TD></TR></TABLE> 
+<% end %>
+</br>
+
+
+
+
+
+</br>
+<h4>Rides With Seats</h4>
+<TABLE>
+<% @rides_with_open_seats.each do |ride| %>
+ <TR><TD>Ride: <%=link_to ride.id, ride %></TD>
+<TD>
+<%= button_to 'Join Ride', ride_passengers_path(:ride_id => ride, :user_id => current_user) %>
+</TD></TR></TABLE> 
+<% end %>
+
+</br>
+
+<h4>Rides That Need a Driver </h4>
+<TABLE>
+<% @driverless_rides.each do |ride| %>
+  <TR><TD>Ride: <%=link_to ride.id, ride %></TD>
+<TD>
+<%= button_to 'Drive Ride', ride_drivers_path(:ride_id => ride, :user_id => current_user) %>
+</TD></TR></TABLE> 
+<% end %>
+
+
+</br></br>
+<%= link_to 'New Ride', new_ride_path %>
+
+

@@ -1,0 +1,2 @@
+module RidePassengersHelper
+end
