@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @ride_driver.user_id %>
+</p>
+
+<p>
+  <strong>Ride:</strong>
+  <%= @ride_driver.ride_id %>
+</p>
+
+<%= link_to 'Edit', edit_ride_driver_path(@ride_driver) %> |
+<%= link_to 'Back', ride_drivers_path %>

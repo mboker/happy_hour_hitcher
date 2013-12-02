@@ -1,0 +1,14 @@
+<%= simple_form_for(@ride) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.collection_select :event_id, Event.order(:name),:id,:name, include_blank: true%>
+    <%= f.input :day %>
+    <%= f.input :time %>
+    <%= f.input :seats %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

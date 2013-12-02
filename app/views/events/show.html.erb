@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h3><strong>
+  <%= @event.name %>
+</strong></h3>
+
+
+<strong><%= @event.day %> From <%= @event.start.hour %> to <%= @event.end.hour %> o'clock</strong> 
+
+</br>
+  At
+<strong> 
+  <%= link_to @event.location.name, @event.location %>
+</strong>
+
+</br>
+</br>
+</br>
+<strong>Rides With Open Seats</strong>
+<TABLE>
+<% @rides_with_open_seats.each do |ride| %>
+ <TR><TD>&nbsp;&nbsp;Ride: <%=link_to ride.day, ride %></TD>
+<TD>
+<%= button_to 'Join Ride', ride_passengers_path(:ride_id => ride, :user_id => current_user) %>
+</TD></TR> 
+<% end %>
+</TABLE>
+
+</br>
+
+<strong>Rides That Need a Driver</strong> 
+<TABLE>
+<% @driverless_rides.each do |ride| %>
+  <TR><TD>&nbsp;&nbsp;Ride: <%=link_to ride.day, ride %></TD>
+<TD>
+<%= button_to 'Drive Ride', ride_drivers_path(:ride_id => ride, :user_id => current_user) %>
+</TD></TR> 
+<% end %>
+</TABLE>
+
+</br></br>
+<%= link_to 'Post a New Ride as the Driver', new_ride_path(:event_id => @event, :user_id => current_user) %></br>
+<%= link_to 'Post a New Ride without a Driver', new_ride_path(:event_id => @event) %>
+

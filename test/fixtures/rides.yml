@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event_id: 1
+  day: 2013-11-29
+  time: 2013-11-29 22:06:20
+  seats: 1
+
+two:
+  event_id: 1
+  day: 2013-11-29
+  time: 2013-11-29 22:06:20
+  seats: 1

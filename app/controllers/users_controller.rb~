@@ -14,7 +14,4 @@ class UsersController < ApplicationController
     @user_driving_rides = Ride.joins(:ride_drivers).where(ride_drivers: {user_id: @user})
   end
 
-  def edit
-  end
-
 end

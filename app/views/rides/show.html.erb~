@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h3><strong>
+  Ride <%= @ride.id %>
+</strong></h3>
+
+
+  <strong>Event:</strong>
+  <%=link_to @ride.event.name, @ride.event %>
+</br>
+  
+  <strong>Location:</strong>
+  <%=link_to @ride.event.location.name , @ride.event.location %>
+</br>
+  On <%= @ride.day %> At <%= @ride.time.hour %> o'clock
+</br>
+
+<p>
+  <strong>Open Seats:</strong>
+  <%= @ride.seats %>
+</p>
+
+</br>
+
+<strong>Passengers:</strong>
+  <TABLE>
+    <% @passengers.each do |passenger| %>
+    <TR><TD><%=link_to passenger.name, passenger %></TD>
+  </TR> 
+<% end %>
+</TABLE>
+
+<strong>Driver:</strong></br>
+  <% @drivers.each do |driver| %>
+  <%=link_to driver.name, driver %>
+<% end %>
+
+
+
+
