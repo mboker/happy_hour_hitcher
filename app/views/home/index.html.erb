@@ -7,7 +7,7 @@
 <strong>Monday</strong>
 <TABLE>
 <% @monday_events.each do |event| %>
-  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %></TD>
+  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
 </TD></TR>
 <% end %>
@@ -17,7 +17,7 @@
 <strong>Tuesday</strong>
 <TABLE>
 <% @tuesday_events.each do |event| %>
-  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %></TD>
+  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
 </TD></TR>
 <% end %>
@@ -27,7 +27,7 @@
 <strong>Wednesday</strong>
 <TABLE>
 <% @wednesday_events.each do |event| %>
-  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %></TD>
+  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
 </TD></TR>
 <% end %>
@@ -37,7 +37,7 @@
 <strong>Thursday</strong>
 <TABLE>
 <% @thursday_events.each do |event| %>
-  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %></TD>
+  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
 </TD></TR>
 <% end %>
@@ -47,7 +47,7 @@
 <strong>Friday</strong>
 <TABLE>
 <% @friday_events.each do |event| %>
-  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %></TD>
+  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
 </TD></TR> 
 <% end %>
@@ -57,7 +57,7 @@
 <strong>Saturday</strong>
 <TABLE>
 <% @saturday_events.each do |event| %>
-  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %></TD>
+  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
 </TD></TR> 
 <% end %>
@@ -67,7 +67,7 @@
 <strong>Sunday</strong>
 <TABLE>
 <% @sunday_events.each do |event| %>
-  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %></TD>
+  <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
 </TD></TR> 
 <% end %>

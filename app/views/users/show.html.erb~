@@ -3,11 +3,8 @@
 <p><strong>Email: </strong>
 <%= @user.email if @user.email %></p>
 
-<p><strong>Address: </strong>
-<%= @user.address if @user.address %></p>
-</br>
-
-<strong>Rides <%= @user.name %> is a Passenger On</strong>
+</br></br>
+<h4><strong>Rides <%= @user.name %> is a Passenger On</strong></h4>
 <table>
   <thead>
     <tr>
@@ -20,7 +17,7 @@
     <tr><td>
     Ride: <%=link_to user_sitting_ride.event.name, user_sitting_ride.event %>&nbsp;</td>
     <td>
-    <%= user_sitting_ride.event.location.name %> At <%= user_sitting_ride.time.hour %> o'clock &nbsp;
+    <%= link_to user_sitting_ride.event.location.name, user_sitting_ride.event.location %> At <%= user_sitting_ride.time.hour %> o'clock &nbsp;
     </td>
     <td><strong><%= link_to 'Cancel Seat', user_sitting_ride, method: :delete, data: { confirm: 'Are you sure?' } %></strong></td>
     </tr> 
@@ -29,7 +26,7 @@
 </table>
 </br>
 
-<strong>Rides <%= @user.name %> is a Driver On</strong>
+<h4><strong>Rides <%= @user.name %> is a Driver On</strong></h4>
 <table>
 <thead>
 <tr>
@@ -42,7 +39,7 @@
 <tr><td>
   Ride: <%=link_to user_driving_ride.event.name, user_driving_ride.event %>&nbsp;</td>
   <td>
-     <%= user_driving_ride.event.location.name %> At <%= user_driving_ride.time.hour %> o'clock &nbsp;
+     <%= link_to user_driving_ride.event.location.name, user_driving_ride.event.location %> At <%= user_driving_ride.time.hour %> o'clock &nbsp;
   </td>
   <td><strong><%= link_to 'Cancel Drive', user_driving_ride, method: :delete, data: { confrim: 'Are you sure?' } %></strong></td>
 </tr>

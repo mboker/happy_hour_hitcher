@@ -3,11 +3,8 @@
 <p><strong>Email: </strong>
 <%= @user.email if @user.email %></p>
 
-<p><strong>Address: </strong>
-<%= @user.address if @user.address %></p>
 </br>
-
-<strong>Rides <%= @user.name %> is a Passenger On</strong>
+<h4><strong>Rides <%= @user.name %> is a Passenger On</strong></h4>
 <table>
   <thead>
     <tr>
@@ -29,7 +26,7 @@
 </table>
 </br>
 
-<strong>Rides <%= @user.name %> is a Driver On</strong>
+<h4><strong>Rides <%= @user.name %> is a Driver On</strong></h4>
 <table>
 <thead>
 <tr>
