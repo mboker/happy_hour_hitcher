@@ -4,8 +4,24 @@
 <h4><strong>Events By Day</strong></h4>
 *Click an Event to view available rides
 </br></br>
+<strong>Go To Day:</strong>
+</br>
+<a href ='#monday'>Monday</a>
+</br>
+<a href ='#tuesday'>Tuesday</a>
+</br>
+<a href ='#wednesday'>Wednesday</a>
+</br>
+<a href ='#thursday'>Thursday</a>
+</br>
+<a href ='#friday'>Friday</a>
+</br>
+<a href ='#saturday'>Saturday</a>
+</br>
+<a href ='#sunday'>Sunday</a>
+</br></br>
 <strong>Monday</strong>
-<TABLE>
+<TABLE id = 'monday'>
 <% @monday_events.each do |event| %>
   <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
@@ -15,7 +31,7 @@
 </br>
 
 <strong>Tuesday</strong>
-<TABLE>
+<TABLE id = 'tuesday'>
 <% @tuesday_events.each do |event| %>
   <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
@@ -25,7 +41,7 @@
 </br>
 
 <strong>Wednesday</strong>
-<TABLE>
+<TABLE id = 'wednesday'>
 <% @wednesday_events.each do |event| %>
   <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
@@ -35,7 +51,7 @@
 </br>
 
 <strong>Thursday</strong>
-<TABLE>
+<TABLE id = 'thursday'>
 <% @thursday_events.each do |event| %>
   <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
@@ -45,7 +61,7 @@
 </br>
 
 <strong>Friday</strong>
-<TABLE>
+<TABLE id = 'friday'>
 <% @friday_events.each do |event| %>
   <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
@@ -55,7 +71,7 @@
 </br>
 
 <strong>Saturday</strong>
-<TABLE>
+<TABLE id = 'saturday'>
 <% @saturday_events.each do |event| %>
   <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
@@ -65,7 +81,7 @@
 </br>
 
 <strong>Sunday</strong>
-<TABLE>
+<TABLE id = 'sunday'>
 <% @sunday_events.each do |event| %>
   <TR><TD>&nbsp;&nbsp;<%=link_to event.name, event %> at <%=event.location.name %></TD>
 <TD>
